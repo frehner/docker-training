@@ -1,0 +1,13 @@
+wordpress:
+  image: wordpress
+  links:
+    - db:mysql
+  expose:
+    - "80"
+  environment:
+    - VIRTUAL_HOST=wordpress.192.168.99.100.xip.io
+
+db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: test
